@@ -1,0 +1,110 @@
+Guia para Editar Seu Perfil e Links Sociais
+Este guia foi feito para ajudar você a editar seu perfil, imagem e links sociais de uma maneira simples e sem precisar de conhecimentos em programação. Tudo que você precisa fazer é seguir as instruções abaixo e preencher as informações de forma adequada.
+
+1. Editar Informações Pessoais
+Essas informações estão localizadas na parte superior do arquivo. Elas incluem o nome da sua marca, seu apelido e uma descrição sobre você ou sua empresa.
+
+companyName: Este é o nome da sua marca ou o seu nome pessoal. Substitua "Seu nome | Sua marca" pelo seu próprio nome ou o nome da sua empresa.
+
+Exemplo: "companyName": "Clovis Antunes | DevRoom"
+
+nickName: Aqui você pode colocar o seu apelido ou nome de usuário nas redes sociais. Substitua "@seuarroba" pelo seu nome de usuário real.
+
+Exemplo: "nickName": "@clovis_antunes"
+
+description: Esta é uma breve descrição sobre você ou sua marca. Troque o texto "Aqui você pode ver os links mais importantes!" por algo mais personalizado que explique quem você é ou o que sua marca faz.
+
+Exemplo: "description": "Desenvolvedor Full Stack com experiência em React e Next.js"
+
+2. Editar o Estilo Visual (Cores e Layout)
+O estilo visual do seu perfil pode ser modificado facilmente para refletir as cores da sua marca.
+
+backgroundColor: Altere essa cor para mudar o fundo da página. Troque o valor de #1a1a1a para a cor desejada, utilizando o código hexadecimal de uma cor.
+
+Exemplo: "backgroundColor": "#ffffff" (para fundo branco)
+
+textColor: Para mudar a cor do texto principal, altere o valor de #fff para a cor que você preferir.
+
+Exemplo: "textColor": "#333333" (para um texto cinza escuro)
+
+linkColor: Modifique o valor #ff0000 para alterar a cor dos links.
+
+Exemplo: "linkColor": "#0000ff" (para links azuis)
+
+buttonColor: Altere a cor de fundo dos botões trocando o valor de #ff0000 para a cor que você deseja.
+
+Exemplo: "buttonColor": "#4CAF50" (para botões verdes)
+
+Existem outras opções para modificar o comportamento dos links, botões e fundos, mas essas são as mais comuns.
+
+3. Editar os Ícones de Redes Sociais
+Esta parte contém os links para suas redes sociais. Você pode adicionar ou editar os links e as descrições para cada ícone.
+
+Exemplo de como funciona cada campo:
+
+id: Um número único para identificar o link social (você não precisa mudar isso, apenas para referência interna).
+
+name: O nome da rede social. Exemplo: "Facebook", "Instagram", etc.
+
+url: O link do seu perfil na rede social. Substitua o valor do url pelo seu link real.
+
+Exemplo para o Facebook: "url": "https://facebook.com/seunome"
+
+description: Aqui você coloca uma breve descrição sobre o que é o link. Troque "Sua Página do Facebook" por algo como "Meu perfil no Facebook".
+
+Exemplo: "description": "Acompanhe minhas atualizações no Facebook"
+
+icon: O nome do ícone que será exibido. Você pode usar nomes de ícones populares, como FaFacebookF para o Facebook, FaInstagram para o Instagram, etc.
+
+Exemplo de edição de um link social:
+
+json
+Copiar código
+{
+  "id": 1,
+  "name": "Facebook",
+  "url": "https://facebook.com/seunome",
+  "description": "Meu perfil no Facebook",
+  "icon": "FaFacebookF"
+}
+4. Estilos de Exibição
+Abaixo das informações e links, temos a parte visual da página, como animações e a aparência dos ícones. Você pode alterar esses estilos, mas é recomendável que você não altere esses campos, a menos que tenha familiaridade com CSS.
+
+Algumas dicas de edições:
+
+Alterar a cor de fundo do perfil: A cor de fundo da seção de perfil é controlada pela classe .header-background. Você pode modificar a propriedade background-color para mudar a cor de fundo da imagem.
+
+Efeito de Hover: Quando você passa o mouse sobre os links sociais ou os itens da lista, há um efeito visual. O código responsável por isso é o que usa a propriedade transition. Caso queira modificar o comportamento, basta ajustar essa propriedade.
+
+Animações: As animações de entrada (como o perfil que aparece com efeito) estão no código da animação @keyframes. Se quiser que os elementos apareçam de uma forma diferente, altere a duração (1s) ou a direção do movimento.
+
+5. Validação de Links e Itens
+Para garantir que os links e ícones sociais sejam exibidos corretamente, adicionamos validações para garantir que os itens estejam configurados como true ou false.
+
+Exemplo de validação em um ícone social:
+
+js
+Copiar código
+const isSocialValid = icon => {
+  return icon.icon && icon.url && icon.url.startsWith("https://");
+};
+
+const socialItems = socialIcons.filter(isSocialValid);
+Essa validação garante que o ícone e o link estejam corretamente configurados.
+
+6. Como Usar as Alterações
+Para editar os arquivos, você pode usar qualquer editor de texto. Basta abrir o arquivo JSON e o arquivo CSS em um editor como o Visual Studio Code ou o Notepad++.
+
+Passos para editar:
+
+Abra o arquivo JSON e altere as informações como companyName, nickName, etc.
+Salve o arquivo JSON.
+Abra o arquivo CSS e altere os estilos conforme desejado.
+Salve o arquivo CSS.
+Faça o upload dos arquivos editados no seu servidor ou na plataforma onde seu site está hospedado.
+Dicas Finais
+Cores: Utilize um gerador de cores, como o coolors.co, para escolher esquemas de cores harmoniosos para seu perfil.
+Links sociais: Verifique se os links das redes sociais estão corretos, pois links errados podem deixar a página com informações incompletas.
+Imagens: Se desejar alterar a imagem de perfil, você precisa editar a imagem diretamente no arquivo de imagens do seu projeto.
+Se tiver mais dúvidas ou precisar de assistência, estamos à disposição para ajudar!
+
