@@ -1,5 +1,5 @@
 import React from "react";
-import LinksPage from "./components/LinksPage/LinksPage";
+import LinksPage from "./components/LinksPage/index";
 import './globals.scss';
 
 const App = () => {

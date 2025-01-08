@@ -1,180 +1,32 @@
 .links_page {
-    font-family: "Arial, sans-serif"; /* Fonte padrão */
-    min-height: 100vh; /* Garante que o conteúdo ocupe toda a altura da tela */
-    display: flex;
-    flex-direction: column;
-  
-    .header {
-      .header-background {
-        background-size: cover; /* Faz a imagem de fundo cobrir todo o espaço */
-        background-position: center; /* Alinha a imagem de fundo ao centro */
-        height: 250px; /* Altura da área do cabeçalho */
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #222; /* Cor escura para o fundo do cabeçalho */
-  
-        .profile_card {
-          position: absolute;
-          bottom: -70px;
-          background: #fff; /* Cor de fundo do cartão do perfil */
-          border-radius: 50%; /* Deixa o cartão redondo */
-          width: 140px;
-          height: 140px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombras suaves ao redor do cartão */
-          overflow: hidden;
-          opacity: 0; /* Inicia invisível */
-          transform: translateY(30px); /* Começa fora da tela */
-          animation: fadeInUp 1s forwards;
-          
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Faz a imagem ocupar totalmente o espaço sem deformar */
-            border-radius: 50%; /* Garante que a imagem seja circular */
-          }
-        }
-      }
-    }
-  
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0; /* Começa invisível */
-        transform: translateY(30px); /* Começa abaixo */
-      }
-      100% {
-        opacity: 1; /* Torna-se visível */
-        transform: translateY(0); /* Fica na posição original */
-      }
-    }
-  
-    .social_media {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-      width: 100%;
-  
-      a {
-        margin: 0 10px;
-        color: #fff; /* Cor branca para os links */
-        text-decoration: none; /* Remove sublinhado */
-        font-size: 1.5rem; /* Tamanho da fonte dos links */
-        position: relative;
-        transition: color 0.3s ease; /* Transição suave de cor */
-      }
-  
-      a::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        background-color: #ff3333; /* Cor vermelha para a linha abaixo do link */
-        bottom: 0;
-        left: 0;
-        transform: scaleX(0); /* Começa invisível */
-        transform-origin: bottom right;
-        transition: transform 0.25s ease-out; /* Efeito de transição para a linha */
-      }
-  
-      a:hover {
-        color: #ff3333; /* Cor vermelha para o link ao passar o mouse */
-      }
-  
-      a:hover::before {
-        transform: scaleX(1); /* A linha cresce quando o mouse passa por cima */
-        transform-origin: bottom left;
-      }
-    }
-  
-    ul {
-      list-style: none;
-      padding: 0;
-      width: 90%;
-  
-      li {
-        margin: 10px 0;
-        padding: 10px;
-        border: 1px solid #333; /* Borda escura para os itens da lista */
-        border-radius: 8px; /* Bordas arredondadas */
-        background-color: #222; /* Fundo escuro para os itens da lista */
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        transition: all 0.3s ease;
-        
-        &:hover {
-          background-color: #333; /* Altera o fundo para um tom mais claro ao passar o mouse */
-          transform: scale(1.02); /* Aumenta o tamanho do item ao passar o mouse */
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra ao item ao passar o mouse */
-        }
-  
-        h3, p {
-          color: #fff; /* Texto branco nos itens da lista */
-          transition: color 0.3s ease; /* Transição suave para a cor do texto */
-        }
-  
-        &:hover h3, &:hover p {
-          color: #ff3333; /* Muda a cor do texto para vermelho ao passar o mouse */
-        }
-      }
-    }
-  
-    .names {
-      margin-top: 70px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-  
-      h1, h2 {
-        text-align: center;
-        margin: 4px 0;
-        opacity: 0; /* Começa invisível */
-        transform: translateY(20px); /* Começa deslocado para baixo */
-        animation: fadeInDown 1s forwards;
-        color: #fff; /* Texto branco para os nomes */
-      }
-    }
-  
-    @keyframes fadeInDown {
-      0% {
-        opacity: 0; /* Começa invisível */
-        transform: translateY(20px); /* Começa deslocado para baixo */
-      }
-      100% {
-        opacity: 1; /* Torna-se visível */
-        transform: translateY(0); /* Fica na posição original */
-      }
-    }
+  font-family: "Arial, sans-serif";
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    footer{
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+  button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+    background-color: #ff3333;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
 
-    footer button {
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      margin-bottom: 16px;
-      cursor: pointer;
-      width: 100%;
-      max-width: 200px;
-      background-color: #ff3333; /* Cor de fundo vermelha do botão */
-      color: #fff; /* Cor do texto do botão */
-      font-size: 1rem;
-      transition: all 0.3s ease; /* Transição suave para o efeito de hover */
-      
+    &:hover {
+      background-color: #e60000;
+      transform: scale(1.1);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     }
-  
-    footer button:hover {
-      background-color: #e60000; /* Cor mais escura do botão ao passar o mouse */
-      transform: scale(1.1); /* Aumenta o botão ao passar o mouse */
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais forte ao passar o mouse */
-    }
+  }
 }
